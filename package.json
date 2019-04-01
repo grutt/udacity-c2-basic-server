@@ -1,22 +1,23 @@
 {
-  "name": "udacity-c2-image-filter",
+  "name": "udacity-c2-basic-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts"
+    "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/grutt/udacity-c2-image-filter.git"
+    "url": "git+https://github.com/grutt/udacity-c2-basic-server.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/grutt/udacity-c2-image-filter/issues"
+    "url": "https://github.com/grutt/udacity-c2-basic-server/issues"
   },
-  "homepage": "https://github.com/grutt/udacity-c2-image-filter#readme",
+  "homepage": "https://github.com/grutt/udacity-c2-basic-server#readme",
   "devDependencies": {
     "ts-node-dev": "^1.0.0-pre.32",
     "tslint": "^5.14.0",
