@@ -1,6 +1,6 @@
 # udacity-c2-basic-server
 
-This is a simple node-express server to get your feet wet with requests and responses.
+This is a simple node-express server to get your feet wet with requests and responses..
 
 ## Setup 
 Install dependendencies (requires installation of NodeJS). In your command line, enter:
