@@ -1,4 +1,4 @@
-# udacity-c2-basic-server test
+# udacity-c2-basic-server
 
 This is a simple node-express server to get your feet wet with requests and responses.
 
