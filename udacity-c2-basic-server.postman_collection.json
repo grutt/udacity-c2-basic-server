@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "30b7bdd3-0f7b-4c5a-9019-faec41058d65",
+		"_postman_id": "9c5a8003-1c58-4207-b843-85f2355aaf4a",
 		"name": "udacity-c2-basic-server",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -127,6 +127,24 @@
 		},
 		{
 			"name": "http://localhost:8082/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9b4015b7-faf5-4924-8661-7728ba94e410",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Welcome to the Cloud!\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -149,7 +167,26 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8082/persons/:name",
+			"name": "http://localhost:8082/persons/george",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "277a3edb-b69d-4dcd-9b13-00d00faaca25",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(`Welcome to the Cloud, george!`);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -158,7 +195,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8082/persons/name",
+					"raw": "http://localhost:8082/persons/:name",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -166,7 +203,13 @@
 					"port": "8082",
 					"path": [
 						"persons",
-						"name"
+						":name"
+					],
+					"variable": [
+						{
+							"key": "name",
+							"value": "george"
+						}
 					]
 				}
 			},
@@ -174,6 +217,28 @@
 		},
 		{
 			"name": "http://localhost:8082/persons/:name Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7df7eec7-78b4-46f4-b2f5-2a7b994747e9",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    var query = {};",
+							"    pm.request.url.query.all().forEach((p) => { query[p.key] = p.value});",
+							"    ",
+							"    pm.expect(pm.response.text()).to.include(`Welcome to the Cloud, ${query['name']}!`);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -182,7 +247,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8082/persons?name=name",
+					"raw": "http://localhost:8082/persons?name=george",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -194,7 +259,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "name"
+							"value": "george"
 						}
 					]
 				}
@@ -203,6 +268,25 @@
 		},
 		{
 			"name": "http://localhost:8082/persons/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "23433ca1-6ffc-4149-9e3c-97514d889ac5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(`Welcome to the Cloud, james!`);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -215,7 +299,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"name\"\n}"
+					"raw": "{\n    \"name\": \"james\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8082/persons",
@@ -226,6 +310,44 @@
 					"port": "8082",
 					"path": [
 						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "400 http://localhost:8082/persons/:name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "444e71e3-ae8c-469a-9da1-22aa3ee0792d",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8082/persons/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"persons",
+						""
 					]
 				}
 			},

@@ -7,6 +7,9 @@ Install dependendencies (requires installation of NodeJS). In your command line,
 
 `npm i`
 
+Install global dependencies:
+`npm i -g typescript`
+
 This will install required packages such as express for request handling and body-parser for making post data easier to use.
 
 ## Running Locally
