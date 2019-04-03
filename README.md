@@ -2,7 +2,7 @@
 
 This is a simple node-express server to get your feet wet with requests and responses.
 
-Important change!
+Important change! Another change!
 
 ## Setup 
 Install dependendencies (requires installation of NodeJS). In your command line, enter:
