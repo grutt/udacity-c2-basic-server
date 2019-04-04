@@ -5,6 +5,7 @@ export const add = (a: number, b: number) => {
     }
 
 export const divide = (a: number, b: number) => {
-    //  if(b === 0) { throw new Error('div by 0')}
+    if(b === 0) { throw new Error('div by 0') }
+
     return a / b;
     }

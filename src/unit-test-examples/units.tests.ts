@@ -19,12 +19,12 @@ describe('add function', () => {
 
 describe('divide', () => {
 
-  it('should divde 6 by 3', () => {
+  it('should divide 6 by 3', () => {
     const result = divide(6,3);
     expect(result).to.equal(2);
   });
 
-  it('should add 5 and 2', () => {
+  it('should divide 5 and 2', () => {
     const result = divide(5,2);
     expect(result).to.equal(2.5);
   });
