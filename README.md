@@ -1,34 +1,37 @@
 # udacity-c2-basic-server
 
-This is a simple node-express server to get your feet wet with requests and responses.
+This is a simple node-express server to explore and understand the Request-Response pattern.
 
-Important change!
+***
+## Getting Setup
 
-## Setup 
-Install dependendencies (requires installation of NodeJS). In your command line, enter:
+### Installing project dependencies
 
-`npm i`
+This project uses NPM to manage software dependencies. NPM Relies on the package.json file located in the root of this repository. After cloning, open your terminal and run:
+```bash
+npm install
+```
+>_tip_: **npm i** is shorthand for **npm install**
 
-Install global dependencies:
-`npm i -g typescript`
+### Installing useful tools
+#### 1. [Postbird](https://github.com/paxa/postbird)
+Postbird is a useful client GUI (graphical user interface) to interact with our provisioned Postgres database. We can establish a remote connection and complete actions like viewing data and changing schema (tables, columns, ect).
 
-This will install required packages such as express for request handling and body-parser for making post data easier to use.
+#### 2. [Postman](https://www.getpostman.com/downloads/)
+Postman is a useful tool to issue and save requests. Postman can create GET, PUT, POST, etc. requests complete with bodies. It can also be used to test endpoints automatically. We've included a collection (`./udacity-c2-restapi.postman_collection.json `) which contains example requsts.
 
-## Running Locally
-To start a developer server that will automatically restart when changes are made to your typescript files run:
+***
 
-`npm run dev`
+## Running the Server Locally
+To run the server locally in developer mode, open terminal and run:
+```bash
+npm run dev
+```
 
-By default, the server will run on http://localhost:8082
+Developer mode runs off the TypeScript source. Any saves will reset the server and run the latest version of the codebase. 
 
-## Packing for Production
-To transpile to javascript, run:
-
-`npm run tsc`
-
-By default, the output will be located in ./www
-
-## Important Files
+***
+## Important Files and Project Structure
 
 The source code for this demo resides in the ./src directory.
 
@@ -36,4 +39,4 @@ The source code for this demo resides in the ./src directory.
 The main code for this demo is located in the ./src/server.ts file. This includes 
 
 ### src/cars.ts
-This is a javascript object containing a list of cars. This will be useful for providing data for simple endpoints.
+This is a javascript object containing a list of cars. This will be useful for providing data for our simple endpoints.
