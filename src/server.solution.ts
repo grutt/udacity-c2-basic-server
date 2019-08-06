@@ -120,7 +120,7 @@ import { Car, cars as cars_list } from './cars';
     let { make, type, model, cost, id } = req.body;
 
     // check to make sure all required variables are set
-    if (!id || !type || !model || !cost) {
+    if (!id || !type || !model || !cost || !make) {
       // respond with an error if not
       return res.status(400)
                 .send(`make, type, model, cost, id are required`);
